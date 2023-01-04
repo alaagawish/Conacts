@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js">
+    </script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+    </script>
+</head>
+
+<body>
+
+    <section data-role="page" id="newContact">
+
+        <div data-role="header">
+            <a href="#contactList" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="flip"> Back</a>
+            <h1>New Contact</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <label for="textinput-1">Name</label>
+                <input type="text" name="textinput-1" id="textinput-1" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Phone</label>
+                <input type="text" name="textinput-1" id="textinput-1" placeholder="(202) 555-555-5555" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Email</label>
+                <input type="text" name="textinput-1" id="textinput-1" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="flip-1">Gender</label>
+                <select name="flip-1" id="flip-1" data-role="slider">
+                    <option value="off">Male</option>
+                    <option value="on">Female</option>
+                </select>
+            </div>
+
+            <a href="#" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-left">Save</a>
+            <a href="#" class="ui-btn ui-btn-inline ui-icon-forbidden ui-btn-icon-left">Cancel</a>
+        </div>
+        <div data-role="footer">
+            <h4>Contact List</h4>
+        </div>
+        </div>
+
+    </section>
+    <!-- second page -->
+
+    <section data-role="page" id="displayInfo">
+
+        <div data-role="header">
+            <a href="#contactList" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left" data-transition="flip"> Back</a>
+            <h1>Alaa El-Sayed</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <img src="girl.jpeg" width="100px" height="100px" /><br>
+            <a href="#dialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left"></a>
+            <a href="#" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-left"></a>
+            <a href="#" class="ui-btn ui-btn-inline ui-icon-phone ui-btn-icon-left"></a>
+        </div>
+
+        <div data-role="footer">
+            <h4>Contact List</h4>
+        </div>
+        </div>
+        <div data-role="popup" id="dialog" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+            <h3 style="padding: 20px;">Delete Contact?</h3>
+            <a href="#" style="margin: 20px;" class="ui-btn ui-btn-inline">Save</a>
+            <a href="#contactList" style="margin: 20px;" class="ui-btn ui-btn-inline ">Cancel</a>
+        </div>
+    </section>
+
+    <!-- first age -->
+    <section data-role="page" id="contactList">
+        <div data-role="header">
+            <a href="#newContact" class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left" data-transition="flip">Add</a>
+            <h1>Contact List</h1>
+        </div>
+
+        <form>
+            <input data-type="search" id="searchForCollapsibleSetChildren">
+        </form>
+
+        <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+
+            <ul data-role="listview" data-split-icon="phone" data-split-theme="a" data-filtertext="alaa Alaa" data-inset="true" data-input="#searchForAContact">
+
+
+                <li>
+                    <a href="#displayInfo">
+                        <img src="girl.jpeg">
+                        <h2>Alaa</h2>
+
+                    </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Call Alaa</a>
+
+                </li>
+
+            </ul>
+            <ul data-role="listview" data-split-icon="phone" data-filtertext="salma Salma a al m " data-split-theme="a" data-inset="true" data-input="#searchForAContact">
+
+                <li>
+                    <a href="#displayInfo">
+                        <img src="girl.jpeg">
+                        <h2>Salma</h2>
+
+                    </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop"> Call Salma</a>
+                </li>
+            </ul>
+            <ul data-role="listview" data-split-icon="phone" data-filtertext="Ahmed ahmed" data-split-theme="a" data-inset="true" data-input="#searchForAContact">
+                <li>
+                    <a href="#displayInfo">
+                        <img src="boy.jpeg">
+                        <h2>Ahmed</h2>
+
+                    </a>
+                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Call Ahmed</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+
+            <h3>Are you sure?</h3>
+
+            <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-phone ui-btn-icon-left ui-btn-inline ui-mini">Call</a>
+            <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+        </div>
+        <!-- footer -->
+        <div data-role="footer">
+            <h4>Contact List</h4>
+        </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
